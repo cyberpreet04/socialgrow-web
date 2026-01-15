@@ -1,0 +1,2334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Grow | Digital Marketing Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="100%" href="/PHOTO/sg.png" >
+    <style>
+        :root {
+            --primary: #7C3AED;
+            --primary-dark: #6D28D9;
+            --secondary: #10B981;
+            --secondary-light: #34D399;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+            --gray-light: #E5E7EB;
+            --accent: #F59E0B;
+            --gradient: linear-gradient(135deg, #7C3AED 0%, #10B981 100%);
+            --gradient-secondary: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 70px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;                 /* ✅ REMOVE 22% */
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        header.scrolled {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+           display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;                 
+        }
+     
+        
+        .logo img {
+           height: 150px;
+           width: 150px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+             margin: 0;
+    padding: 0;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--gray);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .hero-image {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Why Digital Marketing Section */
+        .why-digital {
+            background-color: #F8FAFC;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-header h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            z-index: 2;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        /* Statistics Section */
+        .stats {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .stats h2 {
+            color: white;
+            text-align: center;
+        }
+        
+        .stats h2:after {
+            background: white;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Technologies Section */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .tech-item {
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .tech-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* CEO Section */
+        .ceo-section {
+            background-color: #F8FAFC;
+        }
+        
+        .ceo-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .ceo-image {
+            position: relative;
+        }
+        
+        .ceo-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .ceo-image:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 5px solid var(--secondary);
+            border-radius: var(--radius);
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+        }
+        
+        .ceo-text h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .ceo-quote {
+            font-style: italic;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            background: white;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-about p {
+            color: #CBD5E1;
+        }
+        
+        .footer-links h4, .footer-services h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links ul, .footer-services ul {
+            list-style: none;
+        }
+        
+        .footer-links li, .footer-services li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a, .footer-services a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover, .footer-services a:hover {
+            color: var(--secondary-light);
+            padding-left: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+        }
+        
+        /* Page Navigation */
+        .page-navigation {
+            display: none;
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            background: white;
+            padding: 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .page-nav-item {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: var(--gray-light);
+            border-radius: 50%;
+            margin: 0.8rem 0;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .page-nav-item.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+        
+        /* About Page Styles */
+        .about-hero {
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 3rem;
+            padding-right: 0;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid white;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:after {
+            left: -10px;
+            right: auto;
+            border-right: 10px solid white;
+            border-left: none;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: 20px;
+            right: -80px;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -80px;
+            right: auto;
+        }
+        
+        /* Services Page Styles */
+        .services-hero {
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-icon {
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        /* Portfolio Page Styles */
+        .portfolio-hero {
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: white;
+            border: 2px solid var(--gray-light);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            height: 300px;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(240, 239, 239, 0.9), transparent);
+            color: white;
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Page Styles */
+        .contact-hero {
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gray-light);
+            border-radius: var(--radius);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content, .ceo-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 3.2rem;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+            
+            .timeline-year {
+                left: 0;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 0;
+            }
+            
+            .timeline-content:after {
+                left: -10px;
+                right: auto;
+                border-right: 10px solid white;
+                border-left: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .page-navigation {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .hero {
+                padding-top: 8rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Page Content Styles */
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-circle {
+            width: 50px;
+            height: 50px;
+            border: 5px solid white;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo" data-page="home">
+                    <img src="PHOTO/sg.png"> 
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" data-page="home">Home</a></li>
+                    <li><a href="#about" data-page="about">About</a></li>
+                    <li><a href="#services" data-page="services">Services</a></li>
+                    <li><a href="#portfolio" data-page="portfolio">Portfolio</a></li>
+                    <li><a href="#contact" data-page="contact">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Navigation Dots -->
+    <div class="page-navigation" id="pageNav">
+        <a href="#home" class="page-nav-item active" data-page="home"></a>
+        <a href="#about" class="page-nav-item" data-page="about"></a>
+        <a href="#services" class="page-nav-item" data-page="services"></a>
+        <a href="#portfolio" class="page-nav-item" data-page="portfolio"></a>
+        <a href="#contact" class="page-nav-item" data-page="contact"></a>
+    </div>
+    
+    <!-- Home Page -->
+    <div id="home" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Grow Your Business With Digital Excellence</h1>
+                        <p>We're a full-service digital marketing agency helping businesses grow their online presence, generate leads, and increase revenue through data-driven strategies.</p>
+                        <div class="hero-btns">
+                            <a href="#contact" class="btn btn-primary" data-page="contact">Get Started</a>
+                            <a href="#contact" class="btn btn-secondary" data-page="contact">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Digital Marketing Team">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Digital Marketing Section -->
+        <section class="why-digital">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Digital Marketing?</h2>
+                    <p>In today's digital-first world, a strong online presence is crucial for business growth and success. Here's how we help you achieve your goals.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Brand Awareness</h3>
+                        <p>Increase your brand visibility and reach your target audience across multiple digital channels.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Lead Generation</h3>
+                        <p>Drive qualified leads to your business through targeted campaigns and conversion optimization.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Online Growth</h3>
+                        <p>Scale your business with data-driven strategies that deliver measurable results and ROI.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>ROI Improvement</h3>
+                        <p>Maximize your marketing budget with campaigns that deliver the highest return on investment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Statistics Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Impact in Numbers</h2>
+                    <p>We measure success by the results we deliver for our clients.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item" data-aos="fade-up">
+                        <div class="stat-number" data-count="1">0</div>
+                        <div class="stat-text">Years of Experience</div>
+                    </div>
+                    
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number" data-count="70">0</div>
+                        <div class="stat-text">Total Clients</div>
+                    </div>
+                    
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-text">Completed Projects</div>
+                    </div>
+                    
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number" data-count="250">0</div>
+                        <div class="stat-text">Successful Campaigns</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technologies Section -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Technologies We Use</h2>
+                    <p>We leverage the latest tools and platforms to deliver exceptional results for our clients.</p>
+                </div>
+                
+                <div class="tech-grid">
+                    <div class="tech-item" data-aos="fade-up">
+                        <div class="tech-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="tech-name">Google Ads</div>
+                    </div>
+                    
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="tech-name">Meta Ads</div>
+                    </div>
+                    
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="tech-name">SEO Tools</div>
+                    </div>
+                    
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <div class="tech-name">WordPress</div>
+                    </div>
+                    
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="tech-icon">
+                            <i class="fab fa-shopify"></i>
+                        </div>
+                        <div class="tech-name">Shopify</div>
+                    </div>
+                    
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="tech-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="tech-name">Analytics</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CEO Section -->
+        <section class="ceo-section">
+            <div class="container">
+                <div class="ceo-content">
+                    <div class="ceo-image" data-aos="fade-right">
+                        <img src="PHOTO/CEO.png" alt="CEO of Social Grow">
+                    </div>
+                    
+                    <div class="ceo-text" data-aos="fade-left">
+                        <h3>Meet Our CEO</h3>
+                        <h4>RUCHI RAMANI </h4>
+                        <p>With great knowledge in digital marketing and technology, ruchi founded Social Grow with a vision to help businesses thrive in the digital age. His expertise spans across SEO, PPC, social media marketing, and conversion optimization.</p>
+                        
+                        <div class="ceo-quote">
+                            <p>"At Social Grow, we believe that every business deserves to grow and succeed online. Our mission is to provide data-driven marketing solutions that deliver measurable results and help our clients achieve their business goals."</p>
+                        </div>
+                        
+                        <p>Under ruchi's leadership, Social Grow has helped over 50 businesses transform their digital presence and achieve remarkable growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <a href="#home" class="footer-logo" data-page="home">Social<span>Grow</span></a>
+                        <p>We're a digital marketing agency focused on helping businesses grow their online presence, generate qualified leads, and increase revenue through data-driven strategies.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/socialgrow.agency_?igsh=M3p5MnFxdTB0NjVk"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home" data-page="home">Home</a></li>
+                            <li><a href="#about" data-page="about">About Us</a></li>
+                            <li><a href="#services" data-page="services">Services</a></li>
+                            <li><a href="#portfolio" data-page="portfolio">Portfolio</a></li>
+                            <li><a href="#contact" data-page="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-services">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#services" data-page="services">Digital Marketing</a></li>
+                            <li><a href="#services" data-page="services">SEO Services</a></li>
+                            <li><a href="#services" data-page="services">Content Writing</a></li>
+                            <li><a href="#services" data-page="services">WordPress Development</a></li>
+                            <li><a href="#services" data-page="services">Shopify Development</a></li>
+                            <li><a href="#services" data-page="services">Social Media Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Social Grow Digital Marketing Agency. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- About Page -->
+    <div id="about" class="page-content">
+        <section class="about-hero">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Social Grow</h2>
+                    <p>We are a passionate team of digital marketing experts dedicated to helping businesses achieve growth and success online.</p>
+                </div>
+                
+                <div class="ceo-content">
+                    <div class="ceo-text" data-aos="fade-right">
+                        <h3>Who We Are</h3>
+                        <p>Social Grow is a full-service digital marketing agency founded in 2025 with a mission to help businesses of all sizes grow their online presence and achieve measurable results. We combine creativity, data analysis, and cutting-edge technology to deliver marketing solutions that drive growth.</p>
+                        <p>Our team consists of certified experts in SEO, PPC, social media marketing, content creation, and web development. We stay ahead of industry trends and algorithm changes to ensure our clients always have a competitive edge.</p>
+                    </div>
+                    
+                    <div class="ceo-image" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Grow Team">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mission & Vision</h2>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To empower businesses with data-driven digital marketing strategies that deliver measurable growth, increased brand visibility, and maximum return on investment.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To become the most trusted digital marketing partner for businesses worldwide, recognized for our innovative approaches and exceptional results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="why-digital">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Journey</h2>
+                    <p>From humble beginnings to becoming a leading digital marketing agency</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-year">2025-june </div>
+                        <div class="timeline-content">
+                            <h3>Company Founded</h3>
+                            <p>Social Grow was founded with a small team of 3 digital marketing enthusiasts working from a co-working space.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-year">2025-october</div>
+                        <div class="timeline-content">
+                            <h3>First 10 Clients</h3>
+                            <p>We reached our first milestone of serving 50 clients across various industries and expanded our team to 10 members.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-year">2025-november</div>
+                        <div class="timeline-content">
+                            <h3>Digital Transformation</h3>
+                            <p>Launched our comprehensive digital transformation services helping businesses adapt to the changing digital landscape.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-year">2025-december</div>
+                        <div class="timeline-content">
+                            <h3>Awards & Recognition</h3>
+                            <p>Received "Digital Marketing Agency of the Year" award and expanded our office to accommodate our growing team.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-year">2026- january</div>
+                        <div class="timeline-content">
+                            <h3>Current Position</h3>
+                            <p>Serving 70+ clients with a team of 15+ experts, recognized as a leading digital marketing agency in the region.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Us</h2>
+                    <p>Here's what sets us apart from other digital marketing agencies</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Expertise</h3>
+                        <p>Our team consists of certified professionals with years of experience across all digital marketing disciplines.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Result-Driven Approach</h3>
+                        <p>We focus on delivering measurable results and ROI for our clients, not just vanity metrics.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Client-Focused Mindset</h3>
+                        <p>Your success is our priority. We work closely with you to understand your business goals and challenges.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Transparent Communication</h3>
+                        <p>We provide regular updates, detailed reports, and are always available to answer your questions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer (reused from home) -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <a href="#home" class="footer-logo" data-page="home">Social<span>Grow</span></a>
+                        <p>We're a digital marketing agency focused on helping businesses grow their online presence, generate qualified leads, and increase revenue through data-driven strategies.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/socialgrow.agency_?igsh=M3p5MnFxdTB0NjVk"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home" data-page="home">Home</a></li>
+                            <li><a href="#about" data-page="about">About Us</a></li>
+                            <li><a href="#services" data-page="services">Services</a></li>
+                            <li><a href="#portfolio" data-page="portfolio">Portfolio</a></li>
+                            <li><a href="#contact" data-page="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-services">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#services" data-page="services">Digital Marketing</a></li>
+                            <li><a href="#services" data-page="services">SEO Services</a></li>
+                            <li><a href="#services" data-page="services">Content Writing</a></li>
+                            <li><a href="#services" data-page="services">WordPress Development</a></li>
+                            <li><a href="#services" data-page="services">Shopify Development</a></li>
+                            <li><a href="#services" data-page="services">Social Media Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Social Grow Digital Marketing Agency. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Services Page -->
+    <div id="services" class="page-content">
+        <section class="services-hero">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>We offer a comprehensive range of digital marketing services to help your business grow online.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card" data-aos="fade-up">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Digital Marketing</h3>
+                            <p>Comprehensive digital marketing strategies including PPC, email marketing, and conversion optimization to drive growth and maximize ROI.</p>
+                            
+                            <ul class="service-features">
+                                <li>Pay-Per-Click Advertising</li>
+                                <li>Email Marketing Campaigns</li>
+                                <li>Conversion Rate Optimization</li>
+                                <li>Marketing Automation</li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn btn-primary" data-page="contact">Get Service</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>On-Page & Off-Page SEO</h3>
+                            <p>Improve your website's visibility on search engines with our comprehensive SEO strategies that deliver organic traffic and growth.</p>
+                            
+                            <ul class="service-features">
+                                <li>Keyword Research & Strategy</li>
+                                <li>On-Page Optimization</li>
+                                <li>Technical SEO Audit</li>
+                                <li>Link Building & Outreach</li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn btn-primary" data-page="contact">Get Service</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Content Writing</h3>
+                            <p>Engaging, SEO-optimized content that connects with your audience, builds authority, and drives conversions.</p>
+                            
+                            <ul class="service-features">
+                                <li>Blog Posts & Articles</li>
+                                <li>Website Copywriting</li>
+                                <li>Social Media Content</li>
+                                <li>Email Newsletters</li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn btn-primary" data-page="contact">Get Service</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>WordPress Development</h3>
+                            <p>Custom WordPress websites that are fast, secure, and optimized for conversions and search engines.</p>
+                            
+                            <ul class="service-features">
+                                <li>Custom Theme Development</li>
+                                <li>Plugin Development</li>
+                                <li>Website Maintenance</li>
+                                <li>Performance Optimization</li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn btn-primary" data-page="contact">Get Service</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-icon">
+                            <i class="fab fa-shopify"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Shopify Development</h3>
+                            <p>Custom Shopify stores designed to provide seamless shopping experiences and maximize conversions.</p>
+                            
+                            <ul class="service-features">
+                                <li>Custom Theme Development</li>
+                                <li>App Integration</li>
+                                <li>Payment Gateway Setup</li>
+                                <li>Conversion Optimization</li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn btn-primary" data-page="contact">Get Service</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 6 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Social Media Marketing</h3>
+                            <p>Strategic social media campaigns that build brand awareness, engage audiences, and drive conversions.</p>
+                            
+                            <ul class="service-features">
+                                <li>Social Media Strategy</li>
+                                <li>Content Creation & Scheduling</li>
+                                <li>Community Management</li>
+                                <li>Paid Social Advertising</li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn btn-primary" data-page="contact">Get Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer (reused from home) -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <a href="#home" class="footer-logo" data-page="home">Social<span>Grow</span></a>
+                        <p>We're a digital marketing agency focused on helping businesses grow their online presence, generate qualified leads, and increase revenue through data-driven strategies.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/socialgrow.agency_?igsh=M3p5MnFxdTB0NjVk"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home" data-page="home">Home</a></li>
+                            <li><a href="#about" data-page="about">About Us</a></li>
+                            <li><a href="#services" data-page="services">Services</a></li>
+                            <li><a href="#portfolio" data-page="portfolio">Portfolio</a></li>
+                            <li><a href="#contact" data-page="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-services">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#services" data-page="services">Digital Marketing</a></li>
+                            <li><a href="#services" data-page="services">SEO Services</a></li>
+                            <li><a href="#services" data-page="services">Content Writing</a></li>
+                            <li><a href="#services" data-page="services">WordPress Development</a></li>
+                            <li><a href="#services" data-page="services">Shopify Development</a></li>
+                            <li><a href="#services" data-page="services">Social Media Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Social Grow Digital Marketing Agency. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Portfolio Page -->
+    <div id="portfolio" class="page-content">
+        <section class="portfolio-hero">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Portfolio</h2>
+                    <p>Explore our successful projects across different digital marketing services.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="portfolio-filters" id="portfolioFilters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="digital-marketing">Digital Marketing</button>
+                    <button class="filter-btn" data-filter="seo">SEO</button>
+                    <button class="filter-btn" data-filter="content-writing">Content Writing</button>
+                    <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                    <button class="filter-btn" data-filter="shopify">Shopify</button>
+                    <button class="filter-btn" data-filter="social-media">Social Media</button>
+                </div>
+                
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- Digital Marketing Projects -->
+                    <div class="portfolio-item" data-category="digital-marketing" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce Campaign" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Digital Marketing</span>
+                            <h3>E-commerce Sales Boost</h3>
+                            <p>Increased online sales by 240% for an e-commerce brand through targeted PPC campaigns and conversion optimization.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="digital-marketing" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lead Generation" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Digital Marketing</span>
+                            <h3>B2B Lead Generation</h3>
+                            <p>Generated 500+ qualified leads for a B2B SaaS company through targeted digital marketing campaigns.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- SEO Projects -->
+                    <div class="portfolio-item" data-category="seo" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="SEO Project" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">SEO</span>
+                            <h3>Local Business SEO</h3>
+                            <p>Improved local search rankings for a restaurant chain, resulting in 300% increase in website traffic and reservations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="seo" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="SEO Project" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">SEO</span>
+                            <h3>E-commerce SEO</h3>
+                            <p>Increased organic traffic by 180% for an online retailer through comprehensive on-page and off-page SEO strategies.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Writing Projects -->
+                    <div class="portfolio-item" data-category="content-writing" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Content Writing" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Content Writing</span>
+                            <h3>Blog Content Strategy</h3>
+                            <p>Developed and executed a content strategy that increased blog traffic by 320% for a tech startup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="content-writing" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Content Writing" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Content Writing</span>
+                            <h3>Website Copy Overhaul</h3>
+                            <p>Revamped website copy for a financial services company, resulting in 40% increase in conversion rates.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- WordPress Projects -->
+                    <div class="portfolio-item" data-category="wordpress" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="WordPress Development" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">WordPress</span>
+                            <h3>Corporate Website</h3>
+                            <p>Designed and developed a custom WordPress website for a multinational corporation with multi-language support.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="wordpress" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="WordPress Development" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">WordPress</span>
+                            <h3>News Portal</h3>
+                            <p>Built a high-performance news portal with custom widgets, advanced filtering, and AMP integration.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Shopify Projects -->
+                    <div class="portfolio-item" data-category="shopify" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Shopify Store" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Shopify</span>
+                            <h3>Fashion E-commerce</h3>
+                            <p>Created a visually stunning Shopify store for a fashion brand with custom product filters and quick checkout.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="shopify" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Shopify Store" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Shopify</span>
+                            <h3>Health & Wellness Store</h3>
+                            <p>Developed a Shopify store for a health supplements company with subscription functionality and upsell features.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Projects -->
+                    <div class="portfolio-item" data-category="social-media" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Media Campaign" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Social Media</span>
+                            <h3>Brand Awareness Campaign</h3>
+                            <p>Increased brand awareness by 400% for a new product launch through strategic social media campaigns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="social-media" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Media Campaign" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Social Media</span>
+                            <h3>Community Engagement</h3>
+                            <p>Built an engaged community of 50,000+ followers for a lifestyle brand through consistent content and engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer (reused from home) -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <a href="#home" class="footer-logo" data-page="home">Social<span>Grow</span></a>
+                        <p>We're a digital marketing agency focused on helping businesses grow their online presence, generate qualified leads, and increase revenue through data-driven strategies.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/socialgrow.agency_?igsh=M3p5MnFxdTB0NjVk"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home" data-page="home">Home</a></li>
+                            <li><a href="#about" data-page="about">About Us</a></li>
+                            <li><a href="#services" data-page="services">Services</a></li>
+                            <li><a href="#portfolio" data-page="portfolio">Portfolio</a></li>
+                            <li><a href="#contact" data-page="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-services">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#services" data-page="services">Digital Marketing</a></li>
+                            <li><a href="#services" data-page="services">SEO Services</a></li>
+                            <li><a href="#services" data-page="services">Content Writing</a></li>
+                            <li><a href="#services" data-page="services">WordPress Development</a></li>
+                            <li><a href="#services" data-page="services">Shopify Development</a></li>
+                            <li><a href="#services" data-page="services">Social Media Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Social Grow Digital Marketing Agency. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Contact Page -->
+    <div id="contact" class="page-content">
+        <section class="contact-hero">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <p>Ready to grow your business? Get in touch with our team for a free consultation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card" data-aos="fade-right">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h3>Phone & WhatsApp</h3>
+                            <p>Call us or message us on WhatsApp for quick responses</p>
+                            <p><strong>+91 6356327630</strong></p>
+                            <a href="https://wa.me/916356327630" class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                        
+                        <div class="contact-card" data-aos="fade-right" data-aos-delay="100">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>Send us an email and we'll get back to you within 24 hours</p>
+                            <p><strong>socialgrowagency0@gmail.com</strong></p>
+                        </div>
+                        
+                        <div class="contact-card" data-aos="fade-right" data-aos-delay="200">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Office Address</h3>
+                            <p>Visit our office for a face-to-face consultation</p>
+                            <p><strong>surat,gujarat,India</strong></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form" data-aos="fade-left">
+                        <h3>Send us a message</h3>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                        
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" placeholder="Tell us about your project or requirements" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer (reused from home) -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <a href="#home" class="footer-logo" data-page="home">Social<span>Grow</span></a>
+                        <p>We're a digital marketing agency focused on helping businesses grow their online presence, generate qualified leads, and increase revenue through data-driven strategies.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/socialgrow.agency_?igsh=M3p5MnFxdTB0NjVk"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home" data-page="home">Home</a></li>
+                            <li><a href="#about" data-page="about">About Us</a></li>
+                            <li><a href="#services" data-page="services">Services</a></li>
+                            <li><a href="#portfolio" data-page="portfolio">Portfolio</a></li>
+                            <li><a href="#contact" data-page="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-services">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#services" data-page="services">Digital Marketing</a></li>
+                            <li><a href="#services" data-page="services">SEO Services</a></li>
+                            <li><a href="#services" data-page="services">Content Writing</a></li>
+                            <li><a href="#services" data-page="services">WordPress Development</a></li>
+                            <li><a href="#services" data-page="services">Shopify Development</a></li>
+                            <li><a href="#services" data-page="services">Social Media Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Social Grow Digital Marketing Agency. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // DOM Elements
+        const loader = document.getElementById('loader');
+        const header = document.getElementById('header');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const pageNav = document.getElementById('pageNav');
+        const pageContents = document.querySelectorAll('.page-content');
+        const navItems = document.querySelectorAll('.nav-links a, .page-nav-item, .logo, .footer-links a, .footer-services a, .hero-btns a');
+        const portfolioFilters = document.querySelectorAll('.filter-btn');
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        const contactForm = document.getElementById('contactForm');
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        // Hide loader after page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Update active page nav dot based on scroll position
+            updatePageNav();
+        });
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Page navigation
+        function navigateToPage(pageId) {
+            // Hide all page contents
+            pageContents.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update active nav links
+            document.querySelectorAll('.nav-links a, .page-nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-page') === pageId) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Close mobile menu if open
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+        
+        // Add event listeners for navigation
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = item.getAttribute('data-page');
+                if (pageId) {
+                    navigateToPage(pageId);
+                }
+            });
+        });
+        
+        // Portfolio filtering
+        portfolioFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                // Update active filter button
+                portfolioFilters.forEach(btn => btn.classList.remove('active'));
+                filter.classList.add('active');
+                
+                const filterValue = filter.getAttribute('data-filter');
+                
+                // Filter portfolio items
+                document.querySelectorAll('.portfolio-item').forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Animated counters
+        function animateCounters() {
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current);
+                }, 16);
+            });
+        }
+        
+        // Check if counters are in viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                rect.bottom >= 0
+            );
+        }
+        
+        // Trigger counters when in viewport
+        let countersAnimated = false;
+        
+        function checkCounters() {
+            const statsSection = document.querySelector('.stats');
+            if (statsSection && !countersAnimated && isElementInViewport(statsSection)) {
+                animateCounters();
+                countersAnimated = true;
+            }
+        }
+        
+        window.addEventListener('scroll', checkCounters);
+        window.addEventListener('load', checkCounters);
+        
+        // Update page navigation dots
+        function updatePageNav() {
+            if (window.innerWidth > 768) {
+                pageNav.style.display = 'block';
+                
+                // Find which page is currently most visible
+                let maxVisibility = 0;
+                let activePage = 'home';
+                
+                pageContents.forEach(page => {
+                    const rect = page.getBoundingClientRect();
+                    const visibility = Math.min(rect.height, 
+                        Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top)) / rect.height;
+                    
+                    if (visibility > maxVisibility) {
+                        maxVisibility = visibility;
+                        activePage = page.id;
+                    }
+                });
+                
+                // Update active nav dot
+                document.querySelectorAll('.page-nav-item').forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('data-page') === activePage) {
+                        item.classList.add('active');
+                    }
+                });
+            } else {
+                pageNav.style.display = 'none';
+            }
+        }
+        
+        // Form submission
+      
+       document.addEventListener('submit', function(e) {
+                console.log('Form submission detected:', e.target.id);
+                
+                if (e.target && e.target.id === 'contactForm') {
+                    e.preventDefault();
+                    console.log('Preventing default form submission');
+                    
+                    // Get form data
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const message = document.getElementById('message').value;
+                    
+                    console.log('Form data:', { name, email, phone, message });
+                    
+                    // Validate required fields
+                    if (!name || !email || !phone || !message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Create WhatsApp message
+                    let whatsappMessage = `*New Contact Form Submission*\n\n`;
+                    whatsappMessage += `*Name:* ${name}\n`;
+                    whatsappMessage += `*Email:* ${email}\n`;
+                    if (phone) {
+                        whatsappMessage += `*Phone:* ${phone}\n`;
+                    }
+                    whatsappMessage += `*Message:* ${message}\n\n`;
+                    whatsappMessage += `---\n*Sent from social grow Website*`;
+                    
+                    console.log('WhatsApp message:', whatsappMessage);
+                    
+                    // Encode the message for URL
+                    const encodedMessage = encodeURIComponent(whatsappMessage);
+                    
+                    // Create WhatsApp URL with the message
+                    const whatsappURL = `https://wa.me/916356327630?text=${encodedMessage}`;
+                    
+                    console.log('WhatsApp URL:', whatsappURL);
+                    
+                    // Open WhatsApp with the pre-filled message
+                    window.open(whatsappURL, '_blank');
+                    
+                    // Show success message
+                    alert('Thank you for your message! Opening WhatsApp to send your inquiry.');
+                    
+                    // Reset the form
+                    e.target.reset();
+                    
+                    console.log('Form submitted successfully');
+                }
+            });
+        
+        // Initialize page navigation on load
+        updatePageNav();
+        window.addEventListener('resize', updatePageNav);
+        
+        // Add hover effect to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Add hover effect to feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
